@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>encle</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 6px;
+        }
+
+        body {
+            background-color: brown;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .file::-webkit-file-upload-button {
+            display: none;
+        }
+
+        .file {
+            max-width: 85px;
+            background-color: aliceblue;
+        }
+
+        .btn {
+            cursor: pointer;
+        }
+
+        button,
+        .fileBtn {
+            margin: 8px;
+            min-width: 50px;
+            background-color: deeppink;
+            border: 2px solid black;
+            border-radius: 8px;
+            transition: all 200ms;
+        }
+
+        .fileBtn {
+            background-color: aqua;
+        }
+
+        button:hover {
+            background-color: brown;
+        }
+
+        .fileBtn:hover {
+            background-color: aquamarine;
+        }
+
+        button:active {
+            background-color: crimson;
+        }
+
+        .fileBtn:active {
+            background-color: darkturquoise;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <label for="token">database token</label>
+        <input type="text" name="token" id="token">
+    </div>
+    <div>
+        <label class="btn" for="local">save on this device </label>
+        <input class="btn" type="checkbox" name="local" id="local" checked>
+        <label class="btn" for="db">save to database(encrypted)</label>
+        <input class="btn" type="checkbox" name="db" id="db">
+    </div>
+    <div>
+        <label for="key">encryption key</label>
+        <input type="number" name="key" id="key" value="3">
+    </div>
+    <div>
+        <label for="pass">encryption password</label>
+        <input type="password" name="pass" id="pass" value="pA$5">
+    </div>
+    <div>
+        <label class="btn fileBtn" for="file">select files</label>
+    </div>
+    <div>
+        <input class="file" type="file" name="file" id="file" multiple>
+    </div>
+    <div>
+        <button class="btn" id="btnEnc">encrypt</button>
+        <button class="btn" id="btnDec">decrypt</button>
+    </div>
+</body>
+<script src="https://ak2742.github.io/less/encle.client.js"></script>
+<script src="index.js"></script>
+
+</html>

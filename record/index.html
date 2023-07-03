@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>media/screen recorder</title>
+    <style>
+        body {
+            background-color: firebrick;
+        }
+
+        .m {
+            margin: 20px;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .block {
+            display: block;
+            text-align: center;
+        }
+
+        .btn,
+        button {
+            cursor: pointer;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        video,
+        canvas {
+            max-width: 50vw;
+            max-height: 50vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="block m">
+        <label for="autosave" class="btn">auto save</label>
+        <input type="checkbox" name="autosave" id="autosave" class="btn">
+
+        <label for="scr" class="btn">screen</label>
+        <input type="checkbox" name="scr" id="scr" class="btn" checked>
+
+        <label for="vid" class="btn">video</label>
+        <input type="checkbox" name="vid" id="vid" class="btn" checked>
+
+        <label for="aud" class="btn">audio</label>
+        <input type="checkbox" name="aud" id="aud" class="btn" checked>
+
+        <button onclick="snapshot()">Snapshot</button>
+        <button onclick="saveImg()">save img</button>
+
+        <button onclick="startRec()">start recording</button>
+        <button onclick="stopRec()">stop recording</button>
+        <button onclick="saveRec()">save recording</button>
+    </div>
+    <div class="block">
+        <span id="status" class="bold"></span>
+        <button onclick="pauseRec()" id="pauseBtn">pause recording</button>
+    </div>
+    <div class="flex m">
+        <div class="m">
+            <video id="player" controls muted autoplay></video>
+        </div>
+        <div class="m">
+            <canvas></canvas>
+        </div>
+    </div>
+    <details class="block m">
+        <summary class="btn">keyboard inputs</summary>
+        <h5 class="m">space to start/stop recording</h5>
+        <h5 class="m">P to pause/resume recording</h5>
+        <h5 class="m">enter to take snapshot</h5>
+        <h5 class="m">right arrow to save img</h5>
+        <h5 class="m">left arrow to save rec</h5>
+    </details>
+</body>
+<script src="index.js"></script>
+
+</html>

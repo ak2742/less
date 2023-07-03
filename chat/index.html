@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>live chat/call</title>
+    <style>
+        * {
+            margin: 2px;
+            padding: 2px;
+        }
+
+        body {
+            background-color: goldenrod;
+        }
+
+        .block {
+            background-color: chocolate;
+            border: 2px solid black;
+        }
+
+        .msgs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .msgs {
+            max-height: 35vh;
+            overflow-y: scroll;
+        }
+
+        .msg {
+            display: inline;
+            background-color: bisque;
+            border-radius: 8px;
+        }
+
+        button,
+        #fileInput {
+            margin: 2px;
+            padding: 2px;
+            border: 2px solid black;
+            border-radius: 4px;
+            background-color: black;
+            color: bisque;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="block status">
+        <h4>my id: <span id="myId">not connected</span></h4>
+        <h4>connected on call: <span id="callConnId">not connected</span></h4>
+        <h4>connected on chat: <span id="chatConnId">not connected</span></h4>
+        <h4>auto connect on request: <input type="checkbox" name="auto" id="auto" checked></h4>
+        <h4>encrypt chat: <input type="checkbox" name="enc" id="enc" checked>
+            <span id="encInputs">
+                key: <input type="number" name="key" id="key" value="4">
+                pass: <input type="password" name="pass" id="pass" value="Pa5$">
+            </span>
+        </h4>
+    </div>
+    <div class="block stream">
+        <video id="myStream" controls muted autoplay></video>
+        <video id="gotStream" controls muted autoplay></video>
+    </div>
+    <div class="block input">
+        <label for="videoPref">video</label>
+        <input type="checkbox" name="videoPref" id="videoPref">
+        <label for="audioPref">audio</label>
+        <input type="checkbox" name="audioPref" id="audioPref" checked>
+
+        <label for="random-id">generate random id</label>
+        <input type="checkbox" name="random-id" id="random-id">
+
+        <input type="text" name="remote-id-call" id="remote-id-call" placeholder="enter remote id for call">
+        <button id="newCallBtn">call</button>
+
+        <input type="text" name="remote-id-chat" id="remote-id-chat" placeholder="enter remote id for chat">
+        <button id="newChatBtn">connect</button>
+    </div>
+    <div class="block chat">
+        <div class="block msgs" id="msgs"></div>
+        <input type="text" name="msgInput" id="msgInput" placeholder="message">
+        <button id="sendMsgBtn">send message</button>
+        <input type="file" name="fileInput" id="fileInput">
+        <button id="sendFileBtn">send file</button>
+    </div>
+</body>
+<script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+<script src="https://ak2742.github.io/less/encle.client.js"></script>
+<script src="index.js"></script>
+
+</html>
