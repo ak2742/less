@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSpeech</title>
+    <style>
+        body {
+            background-color: tomato;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="inputs"><br>
+        <label for="command">Type command here: </label>
+        <input type="text" name="command" id="command" placeholder=" eg: Hii"> or <button id="session" onclick="toggleSession()">Start a new Session</button><br>
+    </div>
+    <div id="updates">
+        <p id="inputBox"></p>
+        <p id="outputBox"></p>
+        <p id="status"></p><br>
+    </div>
+</body>
+<script src="https://ak2742.github.io/less/encle.client.js"></script>
+<script src="https://ak2742.github.io/less/data.min.js"></script>
+<script src="index.js"></script>
+
+</html>

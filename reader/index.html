@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reader</title>
+    <style>
+        * {
+            margin: 2px;
+            padding: 2px;
+        }
+
+        body {
+            background-color: coral;
+        }
+
+        input, button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="file" name="file" id="file" accept="image/*" multiple>
+    <button id="read">read images</button>
+    <button id="cp">copy all text</button>
+    <button id="clr">clear text</button>
+    <div id="res"></div>
+</body>
+<script src='https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js'></script>
+<script src='index.js'></script>
+
+</html>
