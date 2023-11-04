@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>media/screen recorder</title>
+    <link rel="stylesheet" href="https://ak2742.github.io/less/style.css">
+</head>
+
+<body>
+    <nav class="nav flex">
+        <a class="n-btn" href="/less/chat">chat</a>
+        <a class="n-btn" href="/less/encle">encle</a>
+        <a class="n-btn" href="/less/jspeech">jspeech</a>
+        <a class="n-btn" href="/less/reader">reader</a>
+        <a class="n-btn" href="/less/record">record</a>
+    </nav>
+
+    <div class="container">
+        <div class="block m10">
+            <div class="media-block">
+                <label for="autosave" class="pointer">auto save</label>
+                <input type="checkbox" name="autosave" id="autosave" class="pointer btn">
+
+                <label for="scr" class="pointer">screen</label>
+                <input type="checkbox" name="scr" id="scr" class="pointer btn" checked>
+            </div>
+            <div class="media-block">
+                <label for="vid" class="pointer">video</label>
+                <input type="checkbox" name="vid" id="vid" class="pointer btn" checked>
+
+                <label for="aud" class="pointer">audio</label>
+                <input type="checkbox" name="aud" id="aud" class="pointer btn" checked>
+            </div>
+
+        </div>
+        <div class="block m10">
+            <button class="pointer border" onclick="snapshot()">Snapshot</button>
+            <button id="saveImgBtn" class="pointer border" onclick="saveImg()" disabled>save img</button>
+
+            <button id="startRecBtn" class="pointer border" onclick="startRec()">start recording</button>
+            <button id="stopRecBtn" class="pointer border" onclick="stopRec()">stop recording</button>
+            <button id="saveRecBtn" class="pointer border" onclick="saveRec()" disabled>save recording</button>
+        </div>
+        <div class="block m10">
+            <span id="status" class="bold"></span>
+            <button class="pointer border" onclick="pauseRec()" id="pauseBtn">pause recording</button>
+        </div>
+        <div class="phn-block flex">
+            <video class="m10" id="player" controls muted autoplay></video>
+            <canvas class="m10"></canvas>
+        </div>
+    </div>
+
+    <details class="r-side media-hide">
+        <summary class="pointer">keyboard inputs</summary>
+        <h5 class="m10">space to start/stop recording</h5>
+        <h5 class="m10">P to pause/resume recording</h5>
+        <h5 class="m10">enter to take snapshot</h5>
+        <h5 class="m10">left arrow to save img</h5>
+        <h5 class="m10">right arrow to save rec</h5>
+    </details>
+</body>
+<script src="index.js"></script>
+
+</html>

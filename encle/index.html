@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>encle</title>
+    <link rel="stylesheet" href="https://ak2742.github.io/less/style.css">
+</head>
+
+<body>
+    <nav class="nav flex">
+        <a class="n-btn" href="/less/chat">chat</a>
+        <a class="n-btn" href="/less/encle">encle</a>
+        <a class="n-btn" href="/less/jspeech">jspeech</a>
+        <a class="n-btn" href="/less/reader">reader</a>
+        <a class="n-btn" href="/less/record">record</a>
+    </nav>
+
+    <div class="container flex">
+        <div class="m10" id="loginInput">
+            <div class="media-block" id="tokenInput">
+                <label class="pointer" for="token">database token</label>
+                <input class="p5 input border" type="text" name="token" id="token">
+            </div>
+            <div id="credsInput" style="display: none;">
+                <div class="media-block">
+                    <label class="pointer" for="username">username</label>
+                    <input class="p5 input border" type="text" name="username" id="username">
+                </div>
+                <div class="media-block">
+                    <label class="pointer" for="token">password</label>
+                    <input class="p5 input border" type="password" name="password" id="password">
+                </div>
+            </div>
+            <div class="block">
+                <div class="media-block">
+                    <button class="pointer border m10" id="login">Login</button>
+                </div>
+                <div class="media-block">
+                    <button class="pointer border m10" id="switchLogin">Login with username / password</button>
+                </div>
+            </div>
+        </div>
+        <div class="m10" id="logoutBtn" style="display: none;">
+            <button class="pointer border m10" id="logout">Logout</button>
+        </div>
+        <div class="m10">
+            <div class="media-block">
+                <label class="pointer" for="local">save on this device </label>
+                <input class="btn pointer" type="checkbox" name="local" id="local" checked>
+            </div>
+            <div class="media-block">
+                <label class="pointer" for="db">save to database(encrypted)</label>
+                <input class="btn pointer" type="checkbox" name="db" id="db">
+            </div>
+        </div>
+        <div class="m10">
+            <div class="media-block">
+                <label class="pointer" for="key">encryption key</label>
+                <input class="p5 input border" type="number" name="key" id="key" value="3">
+            </div>
+        </div>
+        <div class="m10">
+            <div class="media-block">
+                <label class="pointer" for="pass">encryption password</label>
+                <input class="p5 input border" type="password" name="pass" id="pass" value="pA$5">
+            </div>
+        </div>
+        <div class="m10">
+            <label class="btn pointer border" for="file">select files</label>
+        </div>
+        <div class="m10">
+            <input class="file btn pointer border" type="file" name="file" id="file" multiple>
+        </div>
+        <div class="m10">
+            <button class="pointer border m10" id="btnEnc">encrypt</button>
+            <button class="pointer border m10" id="btnDec">decrypt</button>
+        </div>
+        <div class="block bold" id="numFiles"></div>
+        <div class="block" id="searchBox" style="display: none;">
+            <input class="p5 input border" type="text" name="searchInput" id="searchInput" placeholder="search file">
+            <button class="pointer border m10" id="searchBtn">Search</button>
+        </div>
+        <div class="block" id="fileList"></div>
+    </div>
+</body>
+
+<script src="https://unpkg.com/realm-web@1.7.1/dist/bundle.iife.js"></script>
+<script src="https://ak2742.github.io/less/encle.client.js"></script>
+<script src="index.js"></script>
+
+</html>

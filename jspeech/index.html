@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSpeech</title>
+    <link rel="stylesheet" href="https://ak2742.github.io/less/style.css">
+</head>
+
+<body>
+    <nav class="nav flex">
+        <a class="n-btn" href="/less/chat">chat</a>
+        <a class="n-btn" href="/less/encle">encle</a>
+        <a class="n-btn" href="/less/jspeech">jspeech</a>
+        <a class="n-btn" href="/less/reader">reader</a>
+        <a class="n-btn" href="/less/record">record</a>
+    </nav>
+
+    <div class="container">
+        <div id="inputs"><br>
+            <div class="media-block">
+                <label for="command">Type command here: </label>
+                <input class="p5 input border" type="text" name="command" id="command" placeholder=" eg: Hii">
+            </div>
+            <b class="media-hide" id="t-or"> or </b>
+            <div class="media-block">
+                <button class="pointer border" id="session" onclick="toggleSession()">
+                    Start a new Session</button><br>
+            </div>
+        </div>
+        <div id="updates">
+
+            <p class="m10" id="inputBox"></p>
+            <p class="m10" id="outputBox"></p>
+            <p class="m10" id="status"></p><br>
+        </div>
+        <div class="m10" id="sugg"></div>
+    </div>
+
+    <details class="r-side media-hide">
+        <summary class="pointer">commands</summary>
+        <h5 class="m10">language / grammar</h5>
+        <h5 class="m10">index / pitch / rate</h5>
+        <h5 class="m10">date / time</h5>
+        <h5 class="m10">ip / location / weather</h5>
+    </details>
+</body>
+<script src="https://ak2742.github.io/less/encle.client.js"></script>
+<script src="https://ak2742.github.io/less/data.min.js"></script>
+<script src="index.js"></script>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>live chat/call</title>
+    <link rel="stylesheet" href="https://ak2742.github.io/less/style.css">
+</head>
+
+<body>
+    <nav class="nav flex">
+        <a class="n-btn" href="/less/chat">chat</a>
+        <a class="n-btn" href="/less/encle">encle</a>
+        <a class="n-btn" href="/less/jspeech">jspeech</a>
+        <a class="n-btn" href="/less/reader">reader</a>
+        <a class="n-btn" href="/less/record">record</a>
+    </nav>
+
+    <div class="container">
+        <div class="m10">
+            <h4>my id: <span id="myId">not connected</span></h4>
+            <h4>connected on call: <span id="callConnId">not connected</span></h4>
+            <h4>connected on chat: <span id="chatConnId">not connected</span></h4>
+            <h4>auto connect on request: <input class="btn pointer" type="checkbox" name="auto" id="auto" checked></h4>
+            <h4>encrypt chat: <input class="btn pointer" type="checkbox" name="enc" id="enc" checked>
+                <span class="media-block media-flex-start" id="encInputs">
+                    <div class="phn-block">
+                        key: <input class="p5 input border" type="number" name="key" id="key" value="4">
+                    </div>
+                    <div class="phn-block">
+                        pass: <input class="p5 input border" type="password" name="pass" id="pass" value="Pa5$">
+                    </div>
+                </span>
+            </h4>
+        </div>
+        <div class="m10">
+            <video id="myStream" controls muted autoplay></video>
+            <video id="gotStream" controls autoplay></video>
+        </div>
+        <div class="m10">
+            <label class="pointer" for="videoPref">video</label>
+            <input class="btn pointer" type="checkbox" name="videoPref" id="videoPref">
+            <label class="pointer" for="audioPref">audio</label>
+            <input class="btn pointer" type="checkbox" name="audioPref" id="audioPref" checked>
+
+            <label class="pointer" for="random-id">generate random id</label>
+            <input class="btn pointer" type="checkbox" name="random-id" id="random-id">
+        </div>
+        <div class="m10">
+            <input class="p5 input border" type="text" name="remote-id-call" id="remote-id-call"
+                placeholder="enter remote id for call">
+            <button class="pointer border" id="newCallBtn" disabled>call</button>
+
+            <input class="p5 input border" type="text" name="remote-id-chat" id="remote-id-chat"
+                placeholder="enter remote id for chat">
+            <button class="pointer border" id="newChatBtn" disabled>connect</button>
+        </div>
+        <div class="m10">
+            <div class="msgs m10 p5" id="msgs"></div>
+            <div class="media-block media-flex-start">
+                <input class="p5 input border" type="text" name="msgInput" id="msgInput" placeholder="message">
+                <button class="pointer border" id="sendMsgBtn" disabled>send message</button>
+            </div>
+            <input class="file btn pointer border" type="file" name="fileInput" id="fileInput">
+            <button class="pointer border" id="sendFileBtn" disabled>share file</button>
+        </div>
+    </div>
+</body>
+<script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+<script src="https://ak2742.github.io/less/encle.client.js"></script>
+<script src="index.js"></script>
+
+</html>

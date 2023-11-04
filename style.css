@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: darkslategrey;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-auto-rows: minmax(25px, auto);
+}
+
+.nav {
+    z-index: 4;
+    grid-area: 1/1/2/4;
+    background-color: steelblue;
+    padding: 20px 40px;
+    box-shadow: 0 0 6px 0 rgb(34, 40, 45);
+}
+
+.n-btn {
+    margin: 0px 6px;
+    text-decoration: none;
+    color: white;
+}
+
+.n-btn:hover {
+    color: rgb(75, 75, 75);
+}
+
+.r-side {
+    z-index: 3;
+    grid-area: 2/3;
+    background-color: steelblue;
+    padding: 20px 40px;
+    box-shadow: 0 0 6px 0 rgb(34, 40, 45);
+}
+
+.container {
+    z-index: 1;
+    grid-area: 2/2;
+    color: azure;
+    flex-direction: column;
+}
+
+.m10 {
+    margin: 10px;
+}
+
+.p5 {
+    padding: 5px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.border {
+    border: 2px solid black;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.block {
+    display: block;
+    text-align: center;
+}
+
+.media-block {
+    display: inline;
+}
+
+.phn-block {
+    display: inline;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+video,
+canvas {
+    width: 30vw;
+    height: 30vh;
+}
+
+.btn,
+button {
+    padding: 5px 7px;
+    background-color: darkcyan;
+    color: aliceblue;
+    border-radius: 6px;
+    box-shadow: 0 0 3px 0 rgb(5, 53, 53);
+    transition: all .2s;
+}
+
+.btn:hover,
+button:hover {
+    background-color: lightseagreen;
+}
+
+.btn:active,
+button:active {
+    background-color: dodgerblue;
+}
+
+button:disabled {
+    background: cadetblue;
+    border: none;
+    cursor: auto;
+}
+
+.file::-webkit-file-upload-button {
+    display: none;
+}
+
+.input {
+    padding: 5px 7px;
+    background-color: aliceblue;
+    color: darkslategrey;
+    border-radius: 6px;
+    box-shadow: 0 0 3px 0 rgb(49, 49, 49);
+}
+
+.msgs::-webkit-scrollbar {
+    display: none;
+}
+
+.msgs {
+    max-height: 35vh;
+    overflow-y: scroll;
+}
+
+.msg {
+    display: inline;
+    margin: 5px;
+}
+
+@media only screen and (max-width: 990px) {
+    body {
+        display: block;
+    }
+
+    .media-hide {
+        display: none;
+    }
+
+    .btn,
+    button {
+        margin: 2px;
+    }
+
+    input {
+        margin: 2px;
+        max-width: 40vw;
+    }
+
+    .media-block {
+        margin: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .media-flex-start {
+        justify-content: flex-start;
+    }
+}
+
+@media only screen and (max-width: 514px) {
+    .phn-block {
+        display: block;
+    }
+
+    video,
+    canvas {
+        width: 95vw;
+        height: 35vh;
+    }
+}
